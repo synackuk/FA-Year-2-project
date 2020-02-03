@@ -1,0 +1,4 @@
+start
+move forward 5
+rotate left
+stop

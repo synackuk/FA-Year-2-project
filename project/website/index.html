@@ -1,0 +1,63 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Robot website</title>
+	<link href="itempcss.css" rel="stylesheet" type="text/css">
+
+<script>
+function httpGet(theUrl) {
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.open( "GET", theUrl, false ); // false for synchronous request
+    xmlHttp.send( null );
+    return xmlHttp.responseText;
+}
+
+function on_manoeuvre_click() {
+	var url = event.srcElement.value;
+	httpGet(url);
+}
+
+</script>
+
+</head>
+<body>
+
+	<header>
+		Itemp
+	</header>
+	<main>
+		<!-- creates three clickable buttons on the main home page including "start" "stop" and "update maneuver" -->
+		<div class= "option_buttons">
+			<button class="start_button" onclick='httpGet("/api/start");'>START</button>
+			<button class="stop_button" onclick='httpGet("/api/stop");'>STOP</button>
+		</div>    
+		<!-- class creates a side list for user to input commands from  -->
+		<div id="manoeuvre_list">
+	</main>
+
+	<footer>
+		&copy; 2019 - <strong>RYAN ARROWSMITH, dougie inglis and rury spilane</strong></div>
+	</footer>
+	<script type="text/javascript">
+
+var url = "/api/get_manoeuvres";
+var json = httpGet(url);
+
+var maneuvers_dict = JSON.parse(json);
+
+var manoeuvre_div = document.getElementById("manoeuvre_list");
+ 
+for (var key in manoeuvres_dict) {
+	var h2 = document.createElement("h2");
+	h2.innerText = key;
+	h2.value = manoeuvres_dict[key];
+	h2.onclick = on_manoeuvre_click;
+	h2.classList.add('manoeuvre');
+	manoeuvre_div.appendChild(h2);
+}
+
+</script>
+</body>
+</html>
