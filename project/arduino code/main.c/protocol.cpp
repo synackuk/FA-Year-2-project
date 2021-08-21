@@ -77,15 +77,8 @@ static void data_recieved(int count) {
   uint8_t byte_recieved = 0;
   uint8_t packet[255];
 
-  while(Wire.available() && byte_recieved != 0xFF) {
-    packet[i] = Wire.read();
-    byte_recieved = packet[i];
-    i += 1;
-    if(i == 255) {
-      error("Packet too long.");
-      return;
-    }
-  }
+
+  Wire.readBytes(packet, count);
   ret = decode_packet((void*) packet);
   if(ret != 0) {
     error("Failed to decode packet.");
@@ -96,8 +89,6 @@ static void data_recieved(int count) {
 }
 
 void initialise_i2c() {
-  pinMode(13, OUTPUT);
-  Wire.begin(I2C_ADDRESS);
   
   Wire.onReceive(data_recieved);
 }
@@ -106,9 +97,9 @@ void initialise_i2c() {
 
 void initialise_protocol() {
   initialise_protocol_packets();
-#ifdef ARDUINO
+//#ifdef ARDUINO
   initialise_i2c();
-#endif
+//#endif
 }
 #ifndef ARDUINO
 

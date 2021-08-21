@@ -1,3 +1,6 @@
+// common.h Copyright (C) 2019 Douglas Inglis
+// Common functions used throughout the codebase
+
 #ifndef COMMON_H
 #define COMMON_H
 
@@ -8,7 +11,7 @@
 #include <Arduino.h> 
 #include <Wire.h>
 
-int _printf(char* fmt, ...);
+int _printf(char* fmt, ...); // Hack to enable us to print format strings over serial
 
 #undef printf
 

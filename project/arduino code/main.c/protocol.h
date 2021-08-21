@@ -9,7 +9,6 @@
 
 #ifdef ARDUINO
 #define I2C_ADDRESS 0x04
-#define I2C_PIN 13
 
 #define ENDIANNESS_FIX 0 // Hack to make the protocol work properly on Intel and AVR
 

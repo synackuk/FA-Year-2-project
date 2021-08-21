@@ -1,0 +1,6 @@
+start
+move forward 5
+move left 2
+move right 2
+move backward 5
+stop

@@ -1,0 +1,86 @@
+body {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+	background: #1f1f1f;
+	color: #FFFFFF;
+	margin: 0;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-family: "Tahoma";
+}
+
+header, footer {
+	height: 15%;
+	background: #333333;
+	padding: 30px;
+	border-bottom: 3px solid #00b8de;
+}
+
+main {
+	margin:30px;
+	display: flex;
+	flex: 1 0 auto;
+	flex-direction: row;
+}
+
+.option_buttons {
+	width: 50%;
+	height: 70%;
+	margin:30px;
+	display: flex;
+	flex-direction: column;
+}
+
+button {
+	width: 100%;
+	text-align: center;
+	margin-top: 10px;
+	color: #FFFFFF;
+	border: none;
+	border-radius: 3px;
+	font-weight: bold;
+	font-style: normal;
+	font-family: "Franklin Gothic Heavy";
+	font-size: 3vw;
+	cursor: pointer;
+}
+
+.start_button { 
+	height: 20%;
+	background: #00de59;
+}
+
+.stop_button { 
+	height: 15%;
+	background: #d71827;
+}
+
+
+.update_button { 
+	height: 10%;
+	background: #ff6f0a;
+}
+
+#manoeuvre_list {
+	box-shadow: 5px 10px rgba(0, 0, 0.5);
+	width:50%;
+	min-height: 70%;
+	border: 3px solid #00b8de;
+	border-radius: 13px;
+	padding:20px;
+}
+
+hr {
+	border: 1px solid #00b8de;
+	border-radius: 13px;
+}
+
+h2 {
+	font-size: 2vw;
+}
+
+.manoeuvre {
+	cursor: pointer;
+	font-size: 3vw;
+}

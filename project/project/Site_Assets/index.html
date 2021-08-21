@@ -1,0 +1,32 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Robot website</title>
+	<link href="main.css" rel="stylesheet" type="text/css">
+
+</head>
+<body>
+
+	<header>
+		Itemp
+	</header>
+	<main>
+		<!-- creates three clickable buttons on the main home page including "start" "stop" and "update maneuver" -->
+		<div class= "option_buttons">
+			<button class="start_button" onclick='http_get("/api/start");'>START</button>
+			<button class="stop_button" onclick='http_get("/api/stop");'>STOP</button>
+		</div>    
+		<!-- class creates a side list for user to input commands from  -->
+		<div id="manoeuvre_list">
+
+		</div>
+	</main>
+
+	<footer>
+		&copy; 2019 - <strong>Douglas Inglis, Ryan Arrowsmith and Rhuiradh Leslie</strong></div>
+	</footer>
+	 <script src="main.js"></script> 
+</body>
+</html>
